@@ -61,6 +61,7 @@ public class OrcascriptBuilder extends Builder {
 	private final String orcascriptName;
 	private final String pbtFile;
 	private final String excludeLiblist;
+	private final String refreshType;	
 	private final boolean continueOnBuildFailure;
 	private final boolean unstableIfWarnings;
 
@@ -75,6 +76,8 @@ public class OrcascriptBuilder extends Builder {
 	 * @param excludeLiblist
 	 *            The name/location of any libraries in the PBT that should be
 	 *            excluded from the import (i.e., PBD files)
+	 * @param refreshType
+	 *            Whether the 3pass or migration refresh type is performed
 	 * @param continueOnBuildFailure
 	 *            If true, job will continue despite PBC build failure
 	 * @param unstableIfWarnings
@@ -82,9 +85,10 @@ public class OrcascriptBuilder extends Builder {
 	 */
 	@DataBoundConstructor
 	public OrcascriptBuilder(String orcascriptName, String pbtFile, String excludeLiblist,
-			boolean continueOnBuildFailure, boolean unstableIfWarnings) {
+			String refreshType, boolean continueOnBuildFailure, boolean unstableIfWarnings) {
 		this.orcascriptName = orcascriptName;
 		this.pbtFile = pbtFile;
+		this.refreshType = refreshType ;
 		this.excludeLiblist = excludeLiblist;
 		this.continueOnBuildFailure = continueOnBuildFailure;
 		this.unstableIfWarnings = unstableIfWarnings;
@@ -92,6 +96,10 @@ public class OrcascriptBuilder extends Builder {
 
 	public String getExcludeLiblist() {
 		return excludeLiblist;
+	}
+
+	public String getRefreshType() {
+		return refreshType;
 	}
 
 	public String getPbtFile() {
@@ -181,7 +189,7 @@ public class OrcascriptBuilder extends Builder {
 			if (excludeLiblist != null && !excludeLiblist.isEmpty()) {
 				pw.println("scc exclude liblist \"" + excludeLiblist + "\"");
 			}
-			pw.println("scc refresh target 3pass");
+			pw.println("scc refresh target " + refreshType);
 			pw.println("scc close");
 			pw.println("end session");
 		} catch (IOException e) {

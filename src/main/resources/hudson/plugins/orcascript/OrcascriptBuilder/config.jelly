@@ -37,6 +37,12 @@ THE SOFTWARE.
     <f:entry title="${%Exclude Liblist}" field="excludeLiblist">
         <f:textbox name="orcascriptBuilder.excludeLiblist" value="${instance.excludeLiblist}"/>
     </f:entry>
+    <f:entry title="$(%Refresh Type)" field="refreshType">
+    	<select name="refreshType">
+        <option value="3pass">3pass (2017 and later)</option>
+        <option value="migrate">migrate (all version including 2017)</option>
+    </select>
+    </f:entry>
     <f:advanced>
         <f:entry title="${%Continue Job on build Failure}" field="continueOnBuildFailure">
             <f:checkbox name="orcascriptBuilder.continueOnBuildFailure" value="${instance.continueOnBuildFailure}"
