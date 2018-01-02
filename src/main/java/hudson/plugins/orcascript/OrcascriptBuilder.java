@@ -79,7 +79,7 @@ public class OrcascriptBuilder extends Builder {
 	 * @param refreshType
 	 *            Whether the 3pass or migration refresh type is performed
 	 * @param continueOnBuildFailure
-	 *            If true, job will continue despite PBC build failure
+	 *            If true, job will continue despite OrcaScript build failure
 	 * @param unstableIfWarnings
 	 *            If true, job will be unstable if there are warnings
 	 */
@@ -218,7 +218,7 @@ public class OrcascriptBuilder extends Builder {
 			OrcascriptConsoleParser mbcp = new OrcascriptConsoleParser(listener.getLogger(), build.getCharset());
 			OrcascriptConsoleAnnotator annotator = new OrcascriptConsoleAnnotator(listener.getLogger(),
 					build.getCharset());
-			// Launch the pbc170.exe
+			// Launch orcascript170.exe
 			int r = launcher.launch().cmds(args).envs(env).stdout(mbcp).stdout(annotator).pwd(pwd).join();
 			// Check the number of warnings
 			if (unstableIfWarnings && mbcp.getNumberOfWarnings() > 0) {

@@ -12,7 +12,7 @@ import org.jenkinsci.Symbol;
 import java.util.regex.Pattern;
 
 /**
- * Annotation for PbCmopile warning messages
+ * Annotation for OrcaScript warning messages
  */
 @SuppressWarnings({ "rawtypes" })
 public class OrcascriptWarningNote extends ConsoleNote {

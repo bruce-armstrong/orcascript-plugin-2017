@@ -33,7 +33,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Parser to find the number of Warnings/Errors of PBC compilation
+ * Parser to find the number of Warnings/Errors of OrcaScript compilation
  *
  * @author Damien Finck
  */

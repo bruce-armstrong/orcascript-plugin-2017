@@ -12,7 +12,7 @@ import org.jenkinsci.Symbol;
 import java.util.regex.Pattern;
 
 /**
- * Annotation for PBC and CSC error messages
+ * Annotation for OrcaScript error messages
  */
 @SuppressWarnings("rawtypes")
 public class OrcascriptErrorNote extends ConsoleNote {
