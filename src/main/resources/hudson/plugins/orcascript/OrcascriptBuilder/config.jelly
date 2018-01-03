@@ -37,10 +37,10 @@ THE SOFTWARE.
     <f:entry title="${%Exclude Liblist}" field="excludeLiblist">
         <f:textbox name="orcascriptBuilder.excludeLiblist" value="${instance.excludeLiblist}"/>
     </f:entry>
-    <f:entry title="$(%Refresh Type)" field="refreshType">
+    <f:entry title="${%Refresh Type}" field="refreshType">
     	<select name="refreshType">
-        <option value="3pass">3pass (2017 and later)</option>
-        <option value="migrate">migrate (all version including 2017)</option>
+        <option value="3pass">3pass (PB 12.6, 2017 and later)</option>
+        <option value="migrate">migrate (all PB versions including 12.6 and 2017)</option>
     </select>
     </f:entry>
     <f:advanced>
